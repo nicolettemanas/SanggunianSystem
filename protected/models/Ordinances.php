@@ -637,7 +637,7 @@ class Ordinances extends CActiveRecord
 		//CREATE EVENT FOR CALENDAR
 		$event = new Calendar();
 		$event->setAttributes(array(
-			'cal_eventid' => com_create_guid(),
+			'cal_eventid' => uniqid('ss_', true),
 			'cal_eventtitle' => 'Hearing for: '.$this->ord_title,
 			'cal_ordid' => $this->ord_id,
 			'cal_eventcreated' => $date->format('Y-m-d H:i:s'),
@@ -653,7 +653,7 @@ class Ordinances extends CActiveRecord
 		//POST ANNOUNCEMENT
 		$announcement = new Announcements('hearing');
 		$announcement->setScenario('hearing');
-		$announcement->setAttribute('ann_id', com_create_guid());
+		$announcement->setAttribute('ann_id', uniqid('ss_', true));
 		$announcement->setAttribute('ann_body',
 			'A public hearing will be held at '
 			.$data['ord_hearing_venue'].
@@ -709,7 +709,7 @@ class Ordinances extends CActiveRecord
 
 		//add voting details
 		$voting = new Votings();
-		$v_id = com_create_guid();
+		$v_id = uniqid('ss_', true);
 		$voting->setAttributes(array(
 			    'vot_id' => $v_id,
 				'vot_title' => 'Voting: '.$this->ord_title,
@@ -731,7 +731,7 @@ class Ordinances extends CActiveRecord
 		//add event to calendar
 		$event = new Calendar();
 		$event->setAttributes(array(
-			'cal_eventid' => com_create_guid(),
+			'cal_eventid' => uniqid('ss_', true),
 			'cal_eventtitle' => 'Voting for (Third Reading): ".$this->ord_title."',
 			'cal_ordid'	=> $this->ord_id,
 			'cal_eventcreated' => date('Y-m-d H:i:s'),
@@ -749,7 +749,7 @@ class Ordinances extends CActiveRecord
 		$date_str_to = new DateTime($date_to);
 		//POST ANNOUNCEMENT
 		$announcement = new Announcements('hearing');
-		$announcement->setAttribute('ann_id', com_create_guid());
+		$announcement->setAttribute('ann_id', uniqid('ss_', true));
 		$announcement->setAttribute('ann_body',
 			'Proposed ordinance: '.$this->ord_title.' will undergo Third Reading between dates '.$date_str_from->format('M d, Y').' and '.$date_str_to->format('M d, Y').'. The office of Sangguniang Bayan can vote at that time.');
 		$announcement->setAttribute('ann_author', $this->ord_authors_id);
@@ -764,7 +764,7 @@ class Ordinances extends CActiveRecord
 
 		//add voting details
 		$voting = new Votings();
-		$v_id = com_create_guid();
+		$v_id = uniqid('ss_', true);
 		$voting->setAttributes(array(
 			    'vot_id' => $v_id,
 				'vot_title' => 'Veto Voting: '.$this->ord_title,
@@ -789,7 +789,7 @@ class Ordinances extends CActiveRecord
 		//add event to calendar
 		$event = new Calendar();
 		$event->setAttributes(array(
-			'cal_eventid' => com_create_guid(),
+			'cal_eventid' => uniqid('ss_', true),
 			'cal_eventtitle' => 'Voting for (Veto): ".$this->ord_title."',
 			'cal_ordid'	=> $this->ord_id,
 			'cal_eventcreated' => date('Y-m-d H:i:s'),
@@ -807,7 +807,7 @@ class Ordinances extends CActiveRecord
 		$date_str_to = new DateTime($date_to);
 		//POST ANNOUNCEMENT
 		$announcement = new Announcements();
-		$announcement->setAttribute('ann_id', com_create_guid());
+		$announcement->setAttribute('ann_id', uniqid('ss_', true));
 		$announcement->setAttribute('ann_body',
 			'Proposed ordinance: '.$this->ord_title.' has been vetoed by Chief Executive. Members of the sangguniang bayan may override this veto from '.$date_from.' and '.$date_to.'. Otherwise, the ordinance will be considered as rejected.');
 		$announcement->setAttribute('ann_author', $this->ord_authors_id);
@@ -898,7 +898,7 @@ class Ordinances extends CActiveRecord
 		$result = $command->queryAll();
 
 		$announcement = new Announcements();
-		$announcement->setAttribute('ann_id', com_create_guid());
+		$announcement->setAttribute('ann_id', uniqid('ss_', true));
 		$announcement->setAttribute('ann_body', "The ordinance proposal entitled '$this->ord_title' by ".$this->getAuthor($this->ord_id)." was recently approved. The ordinance shall take effect more than ten (10) days after its publication.");
 		$announcement->setAttribute('ann_author', Yii::app()->user->getState('id'));
 		$announcement->setAttribute('ann_title', "Newly approved ordinance: $this->ord_title");
@@ -1008,7 +1008,7 @@ class Ordinances extends CActiveRecord
 
 				/*
 				$announcement = new Announcements();
-				$announcement->setAttribute('ann_id', com_create_guid());
+				$announcement->setAttribute('ann_id', uniqid('ss_', true));
 				$announcement->setAttribute('ann_body', "The ordinance proposal entitled '$this->ord_title' by ".$this->getAuthor($this->ord_id)." was recently approved. The ordinance shall take effect ten (10) days after its publication.");
 				$announcement->setAttribute('ann_author', Yii::app()->user->getState('id'));
 				$announcement->setAttribute('ann_title', "Newly approved ordinance: $this->ord_title");
@@ -1257,7 +1257,7 @@ class Ordinances extends CActiveRecord
 		$date = new dateTime($new_deadline);
 
 		$announcement = new Announcements();
-		$announcement->setAttribute('ann_id', com_create_guid());
+		$announcement->setAttribute('ann_id', uniqid('ss_', true));
 		$announcement->setAttribute('ann_body', "Third reading and voting for ordinance '$this->ord_title' by ".$this->getAuthor($this->ord_id)." was extended until ".$date->format('M d, Y').".");
 		$announcement->setAttribute('ann_author', Yii::app()->user->getState('id'));
 		$announcement->setAttribute('ann_title', "Extended voting: $this->ord_title");

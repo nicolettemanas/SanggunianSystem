@@ -105,7 +105,7 @@ class OrdinancesController extends Controller
 					
 						$log = new Logs();
 						$log->setAttributes(array(
-							'log_id' => com_create_guid(),
+							'log_id' => uniqid('ss_', true),
 							'log_userid' => $user->user_id,
 							'log_username' => $user->user_username,
 							'log_activity' => 'Uploaded a Committee Report for'.$model->ord_title,
@@ -155,7 +155,7 @@ class OrdinancesController extends Controller
 					
 						$log = new Logs();
 						$log->setAttributes(array(
-							'log_id' => com_create_guid(),
+							'log_id' => uniqid('ss_', true),
 							'log_userid' => $user->user_id,
 							'log_username' => $user->user_username,
 							'log_activity' => 'Disproved ordinance '.$model->ord_title,
@@ -186,7 +186,7 @@ class OrdinancesController extends Controller
 					
 								$log = new Logs();
 								$log->setAttributes(array(
-									'log_id' => com_create_guid(),
+									'log_id' => uniqid('ss_', true),
 									'log_userid' => $user->user_id,
 									'log_username' => $user->user_username,
 									'log_activity' => 'Scheduled hearing for '.$model->ord_title,
@@ -220,7 +220,7 @@ class OrdinancesController extends Controller
 					
 							$log = new Logs();
 							$log->setAttributes(array(
-								'log_id' => com_create_guid(),
+								'log_id' => uniqid('ss_', true),
 								'log_userid' => $user->user_id,
 								'log_username' => $user->user_username,
 								'log_activity' => 'Uploaded revision for '.$model->ord_title,
@@ -275,7 +275,7 @@ class OrdinancesController extends Controller
 					
 						$log = new Logs();
 						$log->setAttributes(array(
-							'log_id' => com_create_guid(),
+							'log_id' => uniqid('ss_', true),
 							'log_userid' => $user->user_id,
 							'log_username' => $user->user_username,
 							'log_activity' => 'Registered a vote for '.$model->ord_title,
@@ -330,7 +330,7 @@ class OrdinancesController extends Controller
 						
 						$log = new Logs();
 						$log->setAttributes(array(
-							'log_id' => com_create_guid(),
+							'log_id' => uniqid('ss_', true),
 							'log_userid' => $user->user_id,
 							'log_username' => $user->user_username,
 							'log_activity' => 'Registered vote (veto) for '.$model->ord_title,
@@ -387,7 +387,7 @@ class OrdinancesController extends Controller
 					
 						$log = new Logs();
 						$log->setAttributes(array(
-							'log_id' => com_create_guid(),
+							'log_id' => uniqid('ss_', true),
 							'log_userid' => $user->user_id,
 							'log_username' => $user->user_username,
 							'log_activity' => 'Broke a tie '.$model->ord_title,
@@ -433,7 +433,7 @@ class OrdinancesController extends Controller
 					
 					$log = new Logs();
 					$log->setAttributes(array(
-						'log_id' => com_create_guid(),
+						'log_id' => uniqid('ss_', true),
 						'log_userid' => $user->user_id,
 						'log_username' => $user->user_username,
 						'log_activity' => 'Assigned '.$model->ord_title.' to a Local Committee',
@@ -486,7 +486,7 @@ class OrdinancesController extends Controller
 					
 						$log = new Logs();
 						$log->setAttributes(array(
-							'log_id' => com_create_guid(),
+							'log_id' => uniqid('ss_', true),
 							'log_userid' => $user->user_id,
 							'log_username' => $user->user_username,
 							'log_activity' => 'Scheduled 3rd reading for '.$model->ord_title,
@@ -535,7 +535,7 @@ class OrdinancesController extends Controller
 					
 						$log = new Logs();
 						$log->setAttributes(array(
-							'log_id' => com_create_guid(),
+							'log_id' => uniqid('ss_', true),
 							'log_userid' => $user->user_id,
 							'log_username' => $user->user_username,
 							'log_activity' => 'Generated votes for '.$model->ord_title,
@@ -559,7 +559,7 @@ class OrdinancesController extends Controller
 					
 						$log = new Logs();
 						$log->setAttributes(array(
-							'log_id' => com_create_guid(),
+							'log_id' => uniqid('ss_', true),
 							'log_userid' => $user->user_id,
 							'log_username' => $user->user_username,
 							'log_activity' => 'Extended deadline for voting for '.$model->ord_title,
@@ -609,7 +609,7 @@ class OrdinancesController extends Controller
 					
 					$log = new Logs();
 					$log->setAttributes(array(
-						'log_id' => com_create_guid(),
+						'log_id' => uniqid('ss_', true),
 						'log_userid' => $user->user_id,
 						'log_username' => $user->user_username,
 						'log_activity' => 'Generated voting results (veto) for'.$model->ord_title,
@@ -670,7 +670,7 @@ class OrdinancesController extends Controller
 					
 					$log = new Logs();
 					$log->setAttributes(array(
-						'log_id' => com_create_guid(),
+						'log_id' => uniqid('ss_', true),
 						'log_userid' => $user->user_id,
 						'log_username' => $user->user_username,
 						'log_activity' => 'Uploaded minutes of the meeting for '.$model->ord_title,
@@ -719,7 +719,7 @@ class OrdinancesController extends Controller
 					
 					$log = new Logs();
 					$log->setAttributes(array(
-						'log_id' => com_create_guid(),
+						'log_id' => uniqid('ss_', true),
 						'log_userid' => $user->user_id,
 						'log_username' => $user->user_username,
 						'log_activity' => 'Approved ordinance '.$model->ord_title
@@ -771,7 +771,7 @@ class OrdinancesController extends Controller
 					
 					$log = new Logs();
 					$log->setAttributes(array(
-						'log_id' => com_create_guid(),
+						'log_id' => uniqid('ss_', true),
 						'log_userid' => $user->user_id,
 						'log_username' => $user->user_username,
 						'log_activity' => 'Vetoed ordinance '.$model->ord_title,
@@ -824,7 +824,7 @@ class OrdinancesController extends Controller
 					
 						$log = new Logs();
 						$log->setAttributes(array(
-							'log_id' => com_create_guid(),
+							'log_id' => uniqid('ss_', true),
 							'log_userid' => $user->user_id,
 							'log_username' => $user->user_username,
 							'log_activity' => 'Uploaded amendments for '.$model->ord_title,
@@ -1077,7 +1077,7 @@ class OrdinancesController extends Controller
 			
 			$model->attributes=$_POST['Ordinances'];
 			
-			$model->setAttribute('ord_id', com_create_guid());
+			$model->setAttribute('ord_id', uniqid('ss_', true));
 			$model->setAttribute('ord_no', $model->getOrdinanceNumber());
 			$date = new dateTime($model->ord_creation_date);
 			$model->setAttribute('ord_creation_date', $date->format('Y-m-d H:m:s'));
@@ -1115,7 +1115,7 @@ class OrdinancesController extends Controller
 					
 					$log = new Logs();
 					$log->setAttributes(array(
-						'log_id' => com_create_guid(),
+						'log_id' => uniqid('ss_', true),
 						'log_userid' => $user->user_id,
 						'log_username' => $user->user_username,
 						'log_activity' => 'Created Ordinance '.$model->ord_name,
@@ -1154,7 +1154,7 @@ class OrdinancesController extends Controller
 
 			$model->attributes = $_POST['Ordinances'];
 			$model->setAttributes(array(
-				'ord_id' => com_create_guid(),
+				'ord_id' => uniqid('ss_', true),
 				'ord_authors_id' => Yii::app()->user->getState('id'),
 				'ord_creation_date' => $date->format('Y-m-d H:i:s'),
 				'ord_status' => 'Proposed to Sangguniang Bayan',
@@ -1175,7 +1175,7 @@ class OrdinancesController extends Controller
 					
 					$log = new Logs();
 					$log->setAttributes(array(
-						'log_id' => com_create_guid(),
+						'log_id' => uniqid('ss_', true),
 						'log_userid' => $user->user_id,
 						'log_username' => $user->user_username,
 						'log_activity' => 'Proposed ordinance '.$model->ord_title,
@@ -1234,7 +1234,7 @@ class OrdinancesController extends Controller
 					
 					$log = new Logs();
 					$log->setAttributes(array(
-						'log_id' => com_create_guid(),
+						'log_id' => uniqid('ss_', true),
 						'log_userid' => $user->user_id,
 						'log_username' => $user->user_username,
 						'log_activity' => 'Updated ordinance '.$model->ord_title,
@@ -1263,7 +1263,7 @@ class OrdinancesController extends Controller
 					
 		$log = new Logs();
 		$log->setAttributes(array(
-			'log_id' => com_create_guid(),
+			'log_id' => uniqid('ss_', true),
 			'log_userid' => $user->user_id,
 			'log_username' => $user->user_username,
 			'log_activity' => 'Deleted ordinence '.$this->loadModel($id)->ord_title,

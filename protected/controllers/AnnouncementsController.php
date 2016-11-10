@@ -78,7 +78,7 @@ class AnnouncementsController extends Controller
 			$model->attributes=$_POST['Announcements'];
 			$model->setAttribute('ann_creation_date', $date->format('Y-m-d H:i:s'));
 			$model->setAttributes(array(
-				'ann_id' => com_create_guid(),
+				'ann_id' => uniqid('ss_', true),
 				'ann_author' => Yii::app()->user->getState('id'),
 			));
 			
@@ -88,7 +88,7 @@ class AnnouncementsController extends Controller
 				
 				$log = new Logs();
 				$log->setAttributes(array(
-					'log_id' => com_create_guid(),
+					'log_id' => uniqid('ss_', true),
 					'log_userid' => $user->user_id,
 					'log_username' => $user->user_username,
 					'log_activity' => 'Created announcement '.$model->ann_title,
@@ -131,7 +131,7 @@ class AnnouncementsController extends Controller
 				
 				$log = new Logs();
 				$log->setAttributes(array(
-					'log_id' => com_create_guid(),
+					'log_id' => uniqid('ss_', true),
 					'log_userid' => $user->user_id,
 					'log_username' => $user->user_username,
 					'log_activity' => 'Updated announcement '.$model->ann_title,
@@ -174,7 +174,7 @@ class AnnouncementsController extends Controller
 			
 			$log = new Logs();
 			$log->setAttributes(array(
-				'log_id' => com_create_guid(),
+				'log_id' => uniqid('ss_', true),
 				'log_userid' => $user->user_id,
 				'log_username' => $user->user_username,
 				'log_activity' => 'Deleted announcement '.$model->ann_title,

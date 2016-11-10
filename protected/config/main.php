@@ -51,15 +51,15 @@ return array(
 			),
 		),
 		*/
-		'db'=>array(
+		/*'db'=>array(
 			'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/testdrive.db',
-		),
+		),*/
 		// uncomment the following to use a MySQL database
 		'db'=>array(
 			'tablePrefix' => '',
-			'connectionString' => 'pgsql:host=localhost;port=5432;dbname=SanggunianSystem',
+			'connectionString' => 'pgsql:host=localhost;port=5432;dbname=SSystem_db',
 			'username'=>'postgres',
-			'password'=>'postgresql',
+			'password'=>'password',
 			'charset'=>'UTF8',
 		),
 		/*

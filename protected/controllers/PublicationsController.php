@@ -66,7 +66,7 @@ class PublicationsController extends Controller
 		if(isset($_POST['Publications']))
 		{
 			$model->attributes=$_POST['Publications'];
-			$model->setAttribute('pub_id',com_create_guid());
+			$model->setAttribute('pub_id',uniqid('ss_', true));
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->pub_id));
 		}

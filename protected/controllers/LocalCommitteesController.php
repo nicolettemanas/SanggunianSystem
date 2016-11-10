@@ -77,7 +77,7 @@ class LocalCommitteesController extends Controller
 		if(isset($_POST['LocalCommittees']))
 		{
 			$model->attributes=$_POST['LocalCommittees'];
-			$model->setAttribute('lc_id', com_create_guid());
+			$model->setAttribute('lc_id', uniqid('ss_', true));
 			
 			if($model->validate()){
 				$model->clearUsers($_POST['LocalCommittees']['lc_members']);
@@ -90,7 +90,7 @@ class LocalCommitteesController extends Controller
 					
 					$log = new Logs();
 					$log->setAttributes(array(
-						'log_id' => com_create_guid(),
+						'log_id' => uniqid('ss_', true),
 						'log_userid' => $user->user_id,
 						'log_username' => $user->user_username,
 						'log_activity' => 'Created Local Committee '.$model->lc_name,

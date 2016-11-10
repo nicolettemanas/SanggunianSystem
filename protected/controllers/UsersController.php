@@ -75,7 +75,7 @@ class UsersController extends Controller
 		{
 			$user->attributes=$_POST['Users'];
 			$user->setAttribute('user_usertype', $_POST['Users']['user_usertype']);
-			$user->setAttribute('user_id', com_create_guid());
+			$user->setAttribute('user_id', uniqid('ss_', true));
 			$_POST['Users']['id']  =  $user->user_id;
 			
 			$user->setAttributes(array('user_password'=>md5($user->user_password), 'user_password_repeat'=>md5($user->user_password_repeat)));

@@ -100,7 +100,7 @@ class SiteController extends Controller
 				
 				$log = new Logs();
 				$log->setAttributes(array(
-					'log_id' => com_create_guid(),
+					'log_id' => uniqid('ss_', true),
 					'log_userid' => $user->user_id,
 					'log_username' => $user->user_username,
 					'log_activity' => 'Logged in',
@@ -128,7 +128,7 @@ class SiteController extends Controller
 		
 		$log = new Logs();
 			$log->setAttributes(array(
-				'log_id' => com_create_guid(),
+				'log_id' => uniqid('ss_', true),
 				'log_userid' => $user->user_id,
 				'log_username' => $user->user_username,
 				'log_activity' => 'Logged out',

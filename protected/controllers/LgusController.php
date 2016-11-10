@@ -71,7 +71,7 @@ class LgusController extends Controller
 		{
 			var_dump($_POST);
 			$model->attributes=$_POST['Lgus'];
-			$model->setAttribute('lgu_id', com_create_guid());
+			$model->setAttribute('lgu_id', uniqid('ss_', true));
 			//if($model->save())
 				//$this->redirect(array('view','id'=>$model->lgu_id));
 		}
