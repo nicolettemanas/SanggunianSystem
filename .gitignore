@@ -1,0 +1,16 @@
+# exlude files under uploads
+uploads/*
+
+# keep folder
+!uploads/.gitkeep
+
+
+# Created by https://www.gitignore.io/api/yii
+
+### Yii ###
+assets/*
+!assets/.gitignore
+protected/runtime/*
+!protected/runtime/.gitignore
+protected/data/*.db
+themes/classic/views/

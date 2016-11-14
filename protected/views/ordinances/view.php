@@ -59,7 +59,7 @@ $baseUrl = Yii::app()->baseUrl;
 	<?php echo CHtml::hiddenField('view_minutes', $model->get_minutes($model->ord_id), array('id'=>'minutes_id')); ?>
 </div>
 
-<div id="pdf" style="height: 130%; width: 129%;" class="row">
+<div id="pdf" style="height: 700px; width: 129%;" class="row">
 </div>
 
 
@@ -80,7 +80,7 @@ $baseUrl = Yii::app()->baseUrl;
   
 	for(i=0;i<e.length;i++){
 		console.log(e[i]);
-		e[0].onclick = function(){alert("dasd")};
+		//e[0].onclick = function(){alert("dasd")};
 		e[i].onclick = function(){
 			if(this.id == "view_ordinance"){
 				console.log($('#pdf_id').val());
